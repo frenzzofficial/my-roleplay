@@ -5,16 +5,16 @@ import "@/styles/features/ads-sense/sidebar-ad.css";
 
 const LifeInvaderAdsPage = () => {
   return (
-    <div className="li-page-with-ads">
-      <div className="li-page-with-ads__rail li-page-with-ads__rail--left">
+    <div className="li-layout-split">
+      <div className="li-layout-split__rail li-layout-split__rail--start">
         <LeftSidebarAd />
       </div>
 
-      <div className="li-page-with-ads__content">
+      <div className="li-layout-split__content">
         <AdsStudio />
       </div>
 
-      <div className="li-page-with-ads__rail li-page-with-ads__rail--right">
+      <div className="li-layout-split__rail li-layout-split__rail--end">
         <RightSidebarAd />
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { AD_UNITS } from "../../../packages/configs/ads.config";
+import { MEDIANET_CID } from "../../../packages/configs/ads.config";
 
 /**
  * Mount once near the root of the app (e.g. in the root layout). Sets up
@@ -10,7 +10,7 @@ import { AD_UNITS } from "../../../packages/configs/ads.config";
  * call don't get dropped.
  */
 const MediaNetScript = () => {
-  if (!AD_UNITS.MEDIANET_CID) return null;
+  if (!MEDIANET_CID) return null;
 
   return (
     <>
@@ -19,7 +19,7 @@ const MediaNetScript = () => {
       </Script>
       <Script
         id="medianet-loader"
-        src={`https://contextual.media.net/dmedianet.js?cid=${AD_UNITS.MEDIANET_CID}`}
+        src={`https://contextual.media.net/dmedianet.js?cid=${MEDIANET_CID}`}
         strategy="afterInteractive"
         async
       />

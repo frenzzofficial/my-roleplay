@@ -6,6 +6,8 @@ const adsEnvSchema = z.object({
   NEXT_PUBLIC_MEDIANET_LEFT_CRID: z.string().trim().default(""),
 
   NEXT_PUBLIC_MEDIANET_RIGHT_CRID: z.string().trim().default(""),
+
+  NEXT_PUBLIC_GOOGLE_ADS_CLIENT: z.string().trim().default(""),
 });
 
 const parsedAdsEnv = adsEnvSchema.safeParse(process.env);
@@ -26,6 +28,9 @@ export const envAdsConfig = Object.freeze({
     parsedAdsEnv.data.NEXT_PUBLIC_MEDIANET_LEFT_CRID || undefined,
   MEDIANET_RIGHT_CRID:
     parsedAdsEnv.data.NEXT_PUBLIC_MEDIANET_RIGHT_CRID || undefined,
+
+  GOOGLE_ADS_CLIENT:
+    parsedAdsEnv.data.NEXT_PUBLIC_GOOGLE_ADS_CLIENT || undefined,
 });
 
 export type EnvAdsConfig = typeof envAdsConfig;

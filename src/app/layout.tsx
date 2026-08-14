@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import Script from "next/script";
+import GoogleAds from "@/components/features/ads-sense/google/GoogleAds";
 import AppClientLayout from "@/components/layouts/AppClientLayout";
 import StructuredData from "@/components/seo/StructuredData";
 import { baseMetadata } from "@/packages/seo/seo.config";
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {themeInitScript}
         </Script>
         <StructuredData />
+        <GoogleAds />
       </head>
       <body
         className="min-h-full flex flex-col"

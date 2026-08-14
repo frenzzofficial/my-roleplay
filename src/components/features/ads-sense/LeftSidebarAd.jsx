@@ -10,7 +10,7 @@ const LeftSidebarAd = ({ className = "" }) => {
       crid={unit.crid}
       width={unit.width}
       height={unit.height}
-      className={`li-sidebar-ad--left ${className}`.trim()}
+      className={`li-partner-slot--start ${className}`.trim()}
     />
   );
 };

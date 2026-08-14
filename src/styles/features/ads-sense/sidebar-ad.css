@@ -1,4 +1,4 @@
-.li-page-with-ads {
+.li-layout-split {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr) 160px;
   gap: 24px;
@@ -9,11 +9,11 @@
   padding-inline: 16px;
 }
 
-.li-page-with-ads__content {
+.li-layout-split__content {
   min-width: 0;
 }
 
-.li-page-with-ads__rail {
+.li-layout-split__rail {
   position: sticky;
   top: 24px;
   display: flex;
@@ -21,18 +21,18 @@
 }
 
 /* Below ~1180px there isn't room for two 160px rails without cramping the
-   studio content, so the ad rails drop out entirely rather than squeezing. */
+   studio content, so the rails drop out entirely rather than squeezing. */
 @media (max-width: 1180px) {
-  .li-page-with-ads {
+  .li-layout-split {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .li-page-with-ads__rail {
+  .li-layout-split__rail {
     display: none;
   }
 }
 
-.li-sidebar-ad {
+.li-partner-slot {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +44,7 @@
   border-radius: var(--radius);
 }
 
-.li-sidebar-ad__label {
+.li-partner-slot__label {
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.08em;

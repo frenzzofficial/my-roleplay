@@ -18,7 +18,7 @@ const SidebarAd = ({
   label = "Advertisement",
 }) => {
   const reactId = useId();
-  const slotId = `mnet-ad-${reactId.replace(/[:]/g, "")}`;
+  const slotId = `mnet-slot-${reactId.replace(/[:]/g, "")}`;
   const requested = useRef(false);
 
   useEffect(() => {
@@ -43,11 +43,11 @@ const SidebarAd = ({
 
   return (
     <aside
-      className={`li-sidebar-ad ${className}`.trim()}
+      className={`li-partner-slot ${className}`.trim()}
       style={{ width, minHeight: height }}
       aria-label={label}
     >
-      <span className="li-sidebar-ad__label">{label}</span>
+      <span className="li-partner-slot__label">{label}</span>
       <div id={slotId} style={{ width, height }} />
     </aside>
   );
