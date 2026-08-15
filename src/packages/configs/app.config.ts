@@ -21,6 +21,11 @@ export const appConfig = Object.freeze({
     ogImageUrl: envPublicConfig.OG_IMAGE_URL,
 
     theme: envPublicConfig.ACTIVE_THEME,
+
+    author: {
+      name: envPublicConfig.AUTHOR_NAME,
+      url: envPublicConfig.AUTHOR_URL,
+    },
   },
 
   logging: {

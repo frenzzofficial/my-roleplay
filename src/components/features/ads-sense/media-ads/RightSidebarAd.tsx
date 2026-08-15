@@ -1,10 +1,14 @@
 "use client";
 
-import { AD_UNITS } from "../../../packages/configs/ads.config";
+import { MEDIANET_AD_UNITS } from "@/packages/configs/ads.config";
 import SidebarAd from "./SidebarAd";
 
-const RightSidebarAd = ({ className = "" }) => {
-  const unit = AD_UNITS.right;
+interface RightSidebarAdProps {
+  className?: string;
+}
+
+const RightSidebarAd = ({ className = "" }: RightSidebarAdProps) => {
+  const unit = MEDIANET_AD_UNITS.right;
   return (
     <SidebarAd
       crid={unit.crid}

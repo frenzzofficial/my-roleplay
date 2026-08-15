@@ -1,6 +1,15 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { AD_SLOT_LABEL } from "@/packages/configs/ads.config";
+
+interface SidebarAdProps {
+  crid: string | undefined;
+  width: number;
+  height: number;
+  className?: string;
+  label?: string;
+}
 
 /**
  * Renders a single Media.net display ad slot.
@@ -15,8 +24,8 @@ const SidebarAd = ({
   width,
   height,
   className = "",
-  label = "Advertisement",
-}) => {
+  label = AD_SLOT_LABEL,
+}: SidebarAdProps) => {
   const reactId = useId();
   const slotId = `mnet-slot-${reactId.replace(/[:]/g, "")}`;
   const requested = useRef(false);
@@ -27,12 +36,12 @@ const SidebarAd = ({
 
     requested.current = true;
 
-    window._mNHandle = window._mNHandle || {};
+    window._mNHandle = window._mNHandle || { queue: [] };
     window._mNHandle.queue = window._mNHandle.queue || [];
 
     try {
       window._mNHandle.queue.push(() => {
-        window._mNDetails.loadTag(crid, `${width}x${height}`, slotId);
+        window._mNDetails?.loadTag(crid, `${width}x${height}`, slotId);
       });
     } catch {
       // Media.net script not ready / blocked — fail silently, slot stays empty.

@@ -1,5 +1,5 @@
 import type React from "react";
-import MediaNetScript from "@/components/features/ads-sense/MediaNetScript";
+import MediaNetScript from "@/components/features/ads-sense/media-ads/MediaNetScript";
 
 interface LifeInvaderAdsLayoutProps {
   children: React.ReactNode;

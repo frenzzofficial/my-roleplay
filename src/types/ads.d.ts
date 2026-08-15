@@ -9,6 +9,7 @@ declare global {
     _mNDetails?: {
       loadTag: (crid: string, size: string, elementId: string) => void;
     };
+    adsbygoogle?: unknown[];
   }
 }
 

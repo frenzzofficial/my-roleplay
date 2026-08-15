@@ -1,5 +1,5 @@
-import LeftSidebarAd from "@/components/features/ads-sense/LeftSidebarAd";
-import RightSidebarAd from "@/components/features/ads-sense/RightSidebarAd";
+import LeftSidebarAd from "@/components/features/ads-sense/media-ads/LeftSidebarAd";
+import RightSidebarAd from "@/components/features/ads-sense/media-ads/RightSidebarAd";
 import AdsStudio from "@/components/features/life-invader-ads/AdsStudio";
 import "@/styles/features/ads-sense/sidebar-ad.css";
 

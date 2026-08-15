@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { navLinks } from "@/packages/configs/data.config";
-import { Link } from "../ui";
 
 const Header = () => {
   return (
@@ -17,8 +16,6 @@ const Header = () => {
           </a>
         ))}
       </div>
-
-      <Link href={"/life-invader-ads"}>Visit Ads Studio</Link>
     </nav>
   );
 };

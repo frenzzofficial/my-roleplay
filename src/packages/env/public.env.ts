@@ -28,6 +28,11 @@ const publicEnvSchema = z.object({
   NEXT_PUBLIC_OG_IMAGE_URL: z.string().trim().optional(),
 
   NEXT_PUBLIC_ACTIVE_THEME: z.enum(["system", "light", "dark"]).default("dark"),
+
+  // Site owner / author — shown in metadata.authors and used for `rel=author` credit
+  NEXT_PUBLIC_SITE_AUTHOR_NAME: z.string().trim().default("The RolePlayer"),
+
+  NEXT_PUBLIC_SITE_AUTHOR_URL: z.string().trim().default(""),
 });
 
 const parsedPublicEnv = publicEnvSchema.safeParse(process.env);
@@ -54,6 +59,9 @@ export const envPublicConfig = Object.freeze({
   OG_IMAGE_URL: parsedPublicEnv.data.NEXT_PUBLIC_OG_IMAGE_URL,
 
   ACTIVE_THEME: parsedPublicEnv.data.NEXT_PUBLIC_ACTIVE_THEME,
+
+  AUTHOR_NAME: parsedPublicEnv.data.NEXT_PUBLIC_SITE_AUTHOR_NAME,
+  AUTHOR_URL: parsedPublicEnv.data.NEXT_PUBLIC_SITE_AUTHOR_URL,
 });
 
 export type EnvPublicConfig = typeof envPublicConfig;

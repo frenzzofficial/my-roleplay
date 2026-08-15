@@ -1,13 +1,15 @@
 "use client";
 
 import Script from "next/script";
-import { MEDIANET_CID } from "../../../packages/configs/ads.config";
+import { MEDIANET_CID } from "@/packages/configs/ads.config";
 
 /**
  * Mount once near the root of the app (e.g. in the root layout). Sets up
  * window._mNHandle.queue before the async Media.net loader runs, so any
  * SidebarAd instances that mounted earlier and already queued a loadTag()
  * call don't get dropped.
+ *
+ * Renders nothing if NEXT_PUBLIC_MEDIANET_CID isn't set.
  */
 const MediaNetScript = () => {
   if (!MEDIANET_CID) return null;

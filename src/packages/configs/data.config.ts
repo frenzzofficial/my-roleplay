@@ -77,8 +77,8 @@ export const siteConfig = {
 export const navLinks: NavLink[] = [
   { id: "nav-rulebook", label: "Rulebook", href: "#cover" },
   { id: "nav-rules", label: "Rules", href: "#rules" },
-  { id: "nav-how", label: "How It Works", href: "#how" },
-  { id: "nav-faq", label: "FAQ", href: "#faq" },
+  { id: "life-invader-ads", label: "Ads Studio", href: "/life-invader-ads" },
+  { id: "blogs", label: "Blog", href: "/blogs" },
 ];
 
 export const heroTags: HeroTag[] = [

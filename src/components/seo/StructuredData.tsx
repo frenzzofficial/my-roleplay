@@ -33,8 +33,8 @@ const StructuredData = () => {
     image: site.ogImageUrl ?? site.logoUrl,
     publisher: {
       "@type": "Organization",
-      name: "Roleplay",
-      url: "https://vercel.com",
+      name: site.author.name,
+      url: site.author.url,
     },
   };
 

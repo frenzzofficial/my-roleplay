@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GOOGLE_SITE_VERIFICATION } from "@/packages/configs/ads.config";
 import { appConfig } from "@/packages/configs/app.config";
 
 const { site, app, keywords } = appConfig;
@@ -26,6 +27,17 @@ export const baseMetadata: Metadata = {
   applicationName: app.name,
   keywords,
   category: "technology",
+
+  authors: [{ name: site.author.name, url: site.author.url }],
+  creator: site.author.name,
+  publisher: site.author.name,
+
+  // Google Search Console ownership verification — set
+  // NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to enable; omitted entirely
+  // (rather than rendered empty) when unset.
+  ...(GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: GOOGLE_SITE_VERIFICATION } }
+    : {}),
 
   formatDetection: {
     email: false,
