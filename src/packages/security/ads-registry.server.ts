@@ -25,7 +25,7 @@ const normalize = (): Record<string, NormalizedAdData> => {
     car: { primary: cars.carNames },
     house: { primary: house.locationList },
     clothing: { primary: clothings.clothingItems },
-    items: { primary: items.backpackSkins },
+    items: { primary: items.itemsList },
     business: {
       primary: business.businessNames,
       secondary: business.locationSuggestions,

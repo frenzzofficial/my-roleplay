@@ -29,7 +29,7 @@ export interface ClothingDataset {
 }
 
 export interface ItemsDataset {
-  backpackSkins: string[];
+  itemsList: string[];
 }
 
 export interface BusinessDataset {
