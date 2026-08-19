@@ -12,4 +12,6 @@ export const AD_PANELS: Record<AdCategory, ComponentType> = {
   clothing: withSkeleton(() => import("./ClothingAdsPanel")),
   items: withSkeleton(() => import("./ItemsAdsPanel")),
   business: withSkeleton(() => import("./BusinessAdsPanel")),
+  work: withSkeleton(() => import("./WorkAdsPanel")),
+  dating: withSkeleton(() => import("./DatingAdsPanel")),
 };

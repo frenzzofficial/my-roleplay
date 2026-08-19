@@ -1,5 +1,12 @@
 // Ad category identifiers — single source of truth for tabs, routes, and data lookups.
-export type AdCategory = "car" | "house" | "clothing" | "items" | "business";
+export type AdCategory =
+  | "car"
+  | "house"
+  | "clothing"
+  | "items"
+  | "business"
+  | "work"
+  | "dating";
 
 declare global {
   interface Window {
@@ -37,12 +44,22 @@ export interface BusinessDataset {
   locationSuggestions: string[];
 }
 
+export interface DatingDataset {
+  SEARCH_DATING_OPTIONS: string[];
+}
+
+export interface WorkDataset {
+  WORK_SUGGESTIONS: string[];
+}
+
 export type AdDataset =
   | CarDataset
   | HouseDataset
   | ClothingDataset
   | ItemsDataset
-  | BusinessDataset;
+  | BusinessDataset
+  | DatingDataset
+  | WorkDataset;
 
 /** Normalized shape every category resolves to on the client: just named lists. */
 export interface NormalizedAdData {

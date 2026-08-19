@@ -1,6 +1,14 @@
 "use client";
 
-import { Building2, Car, Home, Shirt, ShoppingBag } from "lucide-react";
+import {
+  Building2,
+  Car,
+  Home,
+  LucideWorkflow,
+  Shirt,
+  ShoppingBag,
+  User,
+} from "lucide-react";
 import type { AdCategory } from "@/types/ads";
 
 interface TabDefinition {
@@ -15,6 +23,8 @@ const TABS: TabDefinition[] = [
   { id: "clothing", label: "Clothing Ads", icon: Shirt },
   { id: "items", label: "Item Ads", icon: ShoppingBag },
   { id: "business", label: "Business Ads", icon: Building2 },
+  { id: "work", label: "Work Ads", icon: LucideWorkflow },
+  { id: "dating", label: "Dating Ads", icon: User },
 ];
 
 interface AdTabsProps {
