@@ -3,15 +3,19 @@ import { createHash } from "node:crypto";
 import businessData from "@/data/business.json";
 import carsData from "@/data/cars.json";
 import clothingsData from "@/data/clothings.json";
+import datingData from "@/data/dating.json";
 import houseData from "@/data/house.json";
 import itemsData from "@/data/items.json";
+import workData from "@/data/work.json";
 import type {
   BusinessDataset,
   CarDataset,
   ClothingDataset,
+  DatingDataset,
   HouseDataset,
   ItemsDataset,
   NormalizedAdData,
+  WorkDataset,
 } from "@/types/ads";
 
 const normalize = (): Record<string, NormalizedAdData> => {
@@ -20,6 +24,8 @@ const normalize = (): Record<string, NormalizedAdData> => {
   const clothings = clothingsData as ClothingDataset;
   const items = itemsData as ItemsDataset;
   const business = businessData as BusinessDataset;
+  const work = workData as WorkDataset;
+  const dating = datingData as DatingDataset;
 
   return {
     car: { primary: cars.carNames },
@@ -30,6 +36,8 @@ const normalize = (): Record<string, NormalizedAdData> => {
       primary: business.businessNames,
       secondary: business.locationSuggestions,
     },
+    work: { primary: work.WORK_SUGGESTIONS },
+    dating: { primary: dating.SEARCH_DATING_OPTIONS },
   };
 };
 
