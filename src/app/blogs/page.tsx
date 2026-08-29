@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import BlogCard from "@/components/features/blogs/BlogCard";
-import { getAllBlogPosts } from "@/packages/content/blogs";
+import { getAllContent } from "@/packages/utils/content-hub";
 import "@/styles/features/blogs/blogs.css";
 
 export const metadata: Metadata = {
@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 };
 
 const BlogsIndexPage = () => {
-  const posts = getAllBlogPosts();
+  const posts = getAllContent();
 
   return (
     <div className="li-blog-index">
       <header className="li-blog-index__header">
-        <p className="li-blog-index__eyebrow">The Roleplayer · Blog</p>
+        <p className="li-blog-index__eyebrow">My Roleplay · Blog</p>
         <h1 className="li-blog-index__title">
           GTA RP Guides &amp; LifeInvader Tips
         </h1>

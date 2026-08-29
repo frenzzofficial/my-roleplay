@@ -59,7 +59,7 @@ export const appConfig = Object.freeze({
 
   keywords: [
     // Brand / core
-    "The Roleplayer",
+    "My Roleplay",
     "Roleplayer",
     "Roleplay",
     "RP",

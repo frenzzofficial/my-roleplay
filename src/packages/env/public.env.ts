@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const publicEnvSchema = z.object({
   // App
-  NEXT_PUBLIC_APP_NAME: z.string().trim().min(1).default("The Roleplayer"),
+  NEXT_PUBLIC_APP_NAME: z.string().trim().min(1).default("My Roleplay"),
 
   NEXT_PUBLIC_APP_VERSION: z.string().trim().default("2.0.0"),
 
@@ -21,7 +21,7 @@ const publicEnvSchema = z.object({
     .string()
     .trim()
     .min(1)
-    .default("The Roleplayer: Master Every Roleplay On Every Server"),
+    .default("My Roleplay: Master Every Roleplay On Every Server"),
 
   NEXT_PUBLIC_LOGO_URL: z.string().trim().default("/logo.png"),
 
@@ -30,7 +30,7 @@ const publicEnvSchema = z.object({
   NEXT_PUBLIC_ACTIVE_THEME: z.enum(["system", "light", "dark"]).default("dark"),
 
   // Site owner / author — shown in metadata.authors and used for `rel=author` credit
-  NEXT_PUBLIC_SITE_AUTHOR_NAME: z.string().trim().default("The RolePlayer"),
+  NEXT_PUBLIC_SITE_AUTHOR_NAME: z.string().trim().default("My Roleplay"),
 
   NEXT_PUBLIC_SITE_AUTHOR_URL: z.string().trim().default(""),
 });

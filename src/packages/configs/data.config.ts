@@ -66,7 +66,7 @@ export type SocialLink = {
 };
 
 export const siteConfig = {
-  name: "The Roleplayer",
+  name: "My Roleplay",
   tagline: "An independent player field manual",
   discordHref: "#discord",
   rulebookHref: "#cover",
@@ -245,7 +245,7 @@ export const faqEntries: FaqEntry[] = [
     id: "faq-affiliation",
     question: "Is this affiliated with any specific FiveM server?",
     answer:
-      "No — The Roleplayer is an independent, platform-agnostic guide built for players across any FiveM or RP server, not one specific community.",
+      "No — My Roleplay is an independent, platform-agnostic guide built for players across any FiveM or RP server, not one specific community.",
     defaultOpen: true,
   },
   {

@@ -8,7 +8,11 @@ import { themeInitScript } from "@/packages/utils/apply-theme";
 
 export const metadata = baseMetadata;
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html
       lang="en"
