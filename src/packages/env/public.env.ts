@@ -11,7 +11,7 @@ const publicEnvSchema = z.object({
     .trim()
     .min(1)
     .default(
-      "A complete field guide for PoliceRP, GangRP, LifeInvader, and EMS — built so newcomers stop guessing and start playing like a five-year veteran on day one",
+      "MyRolePlay is your complete GTA V RolePlay guide for PoliceRP, GangRP, LifeInvader, EMS, roleplay rules, terms, and more — helping new players understand GTA roleplay and start playing with confidence from day one",
     ),
 
   // Site

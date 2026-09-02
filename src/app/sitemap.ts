@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
 import { appConfig } from "@/packages/configs/app.config";
-import { getAllBlogPosts } from "@/packages/content/blogs";
+import { getAllContent } from "@/packages/utils/content-hub";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllBlogPosts();
+  // getAllContent() merges JSON blog posts AND markdown docs — every page
+  // that actually renders at /blogs/[slug]. The old getAllBlogPosts() only
+  // covered JSON posts, silently leaving every doc-sourced page (ads
+  // policy, roleplay guides, character building, etc.) out of the sitemap.
+  const content = getAllContent();
 
   return [
     {
@@ -24,9 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    ...posts.map((post) => ({
-      url: `${appConfig.site.url}/blogs/${post.slug}`,
-      lastModified: new Date(post.publishedAt),
+    ...content.map((item) => ({
+      url: `${appConfig.site.url}/blogs/${item.slug}`,
+      lastModified: new Date(item.publishedAt),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

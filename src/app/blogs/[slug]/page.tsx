@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import AdsServices from "@/components/features/ads-sense/AdsServices";
 import BlogContent from "@/components/features/blogs/BlogContent";
 import BlogPostHero from "@/components/features/blogs/BlogPostHero";
+import ArticleStructuredData from "@/components/seo/ArticleStructuredData";
 import Markdown from "@/components/ui/markdown/Markdown";
 import { getAllContent, getContentBySlug } from "@/packages/utils/content-hub";
 
@@ -27,6 +28,7 @@ export async function generateMetadata({
     alternates: {
       canonical: `/blogs/${normalized.slug}`,
     },
+    keywords: normalized.tags,
     openGraph: {
       type: "article",
       title: normalized.title,
@@ -53,7 +55,8 @@ const BlogPostPage = async ({ params }: PageProps<"/blogs/[slug]">) => {
 
   return (
     <article>
-      <BlogPostHero normalized={normalized} />
+      <ArticleStructuredData item={normalized} />
+      <BlogPostHero normalized={normalized} type={item.source} />
 
       <AdsServices>
         <div className="li-blog-post">

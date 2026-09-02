@@ -10,9 +10,10 @@ import {
 
 interface BlogPostHeroProps {
   normalized: NormalizedContentItem;
+  type?: "post" | "doc";
 }
 
-const BlogPostHero = ({ normalized }: BlogPostHeroProps) => {
+const BlogPostHero = ({ normalized, type }: BlogPostHeroProps) => {
   const { containerRef } = useGsapBlogAnimation();
   const { imageRef } = useGsapParallax(containerRef);
 
@@ -36,9 +37,11 @@ const BlogPostHero = ({ normalized }: BlogPostHeroProps) => {
         <p className="li-blog-index__eyebrow gsap-animate-hero">
           {normalized.category}
         </p>
-        <h1 className="li-blog-post__title gsap-animate-hero">
-          {normalized.title}
-        </h1>
+        {type === "post" && (
+          <h1 className="li-blog-post__title gsap-animate-hero">
+            {normalized.title}
+          </h1>
+        )}
         <div className="li-blog-card__meta gsap-animate-hero">
           <span>{normalized.author}</span>
           <span aria-hidden="true">·</span>
