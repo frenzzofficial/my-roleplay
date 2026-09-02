@@ -1,6 +1,6 @@
 {
   "name": "My Roleplay",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A complete field guide for PoliceRP, GangRP, LifeInvader, and EMS — built so newcomers stop guessing and start playing like a five-year veteran on day one",
   "private": true,
   "scripts": {
@@ -51,9 +51,5 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
-  ],
-  "keywords": [
-    "Roleplay",
-    "GTA RP"
   ]
 }

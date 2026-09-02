@@ -39,12 +39,13 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 32px;
-  background: linear-gradient(
-    to bottom,
-    oklch(from var(--background) l c h / 92%),
-    transparent
-  );
-  backdrop-filter: blur(6px);
+  /* Uniformly opaque (not a fade-to-transparent gradient) — the nav is
+   * fixed on top of the hero, which has bright white heading text
+   * starting right at the top of the page; a gradient that reaches 0%
+   * opacity by the nav's own bottom edge let that text bleed faintly
+   * through, showing as a ghosted sliver above the header. */
+  background: oklch(from var(--background) l c h / 90%);
+  backdrop-filter: blur(10px);
 }
 
 .rp-nav__logo {
@@ -88,6 +89,36 @@
   .rp-nav__links {
     display: none;
   }
+}
+
+.rp-nav__theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+
+  color: var(--foreground);
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.rp-nav__theme-toggle:hover {
+  color: var(--primary);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+}
+
+.rp-nav__theme-toggle-placeholder {
+  width: 18px;
+  height: 18px;
 }
 
 /* ---------- BUTTONS ---------- */

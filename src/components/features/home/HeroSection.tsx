@@ -100,8 +100,8 @@ export const HeroSection: React.FC<HeroProps> = ({ config }) => {
                       />
                     </div>
                   ))}
-                  <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-transparent" />
-                  <div className="absolute inset-0 bg-background/40" />
+                  <div className="absolute inset-0 bg-linear-to-t dark:from-background dark:via-background/60 dark:to-transparent" />
+                  <div className="absolute inset-0 dark:bg-background/10" />
                 </div>
               )}
 
@@ -116,7 +116,7 @@ export const HeroSection: React.FC<HeroProps> = ({ config }) => {
                       </div>
                     )}
 
-                    <h1 className="gsap-animate text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.1]">
+                    <h1 className="gsap-animate text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-hero leading-[1.1]">
                       {slide.title}
                     </h1>
 

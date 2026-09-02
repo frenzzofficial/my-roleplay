@@ -11,7 +11,9 @@ const LifeInvaderButton = (props: LifeInvaderButtonProps) => {
   return (
     <button className="lifeinvader-ad-button" type={type} onClick={onClick}>
       <span className="lifeinvader-ad-button__shine" />
-      <span className="lifeinvader-ad-button__content">{children}</span>
+      <span className="lifeinvader-ad-button__content text-hero">
+        {children}
+      </span>
     </button>
   );
 };

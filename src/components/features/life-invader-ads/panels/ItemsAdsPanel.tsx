@@ -4,8 +4,8 @@ import { Minus, Plus, ShoppingBag } from "lucide-react";
 
 import Button from "@/components/ui/buttons/LifeInvaderButton";
 import Input from "@/components/ui/inputs/LifeInvaderInput";
+import { useItemsAdForm } from "@/packages/hooks/ads/useItemsAdForm";
 import { useAdData } from "@/packages/hooks/useAdData";
-import { useItemsAdForm } from "@/packages/hooks/useItemsAdForm";
 import AutocompleteInput from "../shared/AutocompleteInput";
 import CheckboxPill from "../shared/CheckboxPill";
 import FieldGroup from "../shared/FieldGroup";
@@ -95,15 +95,22 @@ const ItemsAdsPanel = () => {
           </div>
         </FieldGroup>
 
-        {form.showRespectively ? (
+        {form.showRespectively || form.showPerUnit ? (
           <FieldGroup>
             <div className="li-pill-group">
-              <CheckboxPill
-                checked={form.respectively}
-                onChange={form.setRespectively}
-              >
-                Use "respectively" for multiple prices
-              </CheckboxPill>
+              {form.showRespectively ? (
+                <CheckboxPill
+                  checked={form.respectively}
+                  onChange={form.setRespectively}
+                >
+                  Use "respectively" for multiple prices
+                </CheckboxPill>
+              ) : null}
+              {form.showPerUnit ? (
+                <CheckboxPill checked={form.perUnit} onChange={form.setPerUnit}>
+                  Price is per unit ("each")
+                </CheckboxPill>
+              ) : null}
             </div>
           </FieldGroup>
         ) : null}
