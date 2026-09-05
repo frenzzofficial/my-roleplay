@@ -66,7 +66,7 @@ export const assetConfig = [
         name: "xHair Shader",
         version: "7.8",
         fileName: "xhair.fx",
-        path: "/assets/reshade/xhair.fx",
+        path: "/assets/reshade/xhair/xhair.fx",
       },
     ],
   },
