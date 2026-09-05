@@ -1,0 +1,247 @@
+/* Listing ------------------------------------------------------------ */
+
+.li-download-index {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 24px 96px;
+}
+
+.li-download-index__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Masthead (index page banner) ---------------------------------------- */
+
+.li-download-masthead {
+  position: relative;
+  overflow: hidden;
+
+  min-height: clamp(260px, 40vw, 420px);
+  display: flex;
+  align-items: flex-end;
+}
+
+.li-download-masthead__image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.li-download-masthead__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.li-download-masthead__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    var(--background) 12%,
+    color-mix(in srgb, var(--background) 55%, transparent) 55%,
+    color-mix(in srgb, var(--background) 15%, transparent) 100%
+  );
+}
+
+.li-download-masthead__content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 48px 24px 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.li-download-masthead__eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.li-download-masthead__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+.li-download-masthead__subtitle {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Asset card ----------------------------------------------------------- */
+
+.li-asset-card {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: var(--shadow-xs);
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.li-asset-card:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--border));
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.li-asset-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--muted);
+}
+
+.li-asset-card__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.li-asset-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 20px 24px 24px;
+}
+
+.li-asset-card__type {
+  display: inline-block;
+  width: fit-content;
+
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--primary) 35%, var(--border));
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.li-asset-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.li-asset-card__description {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.li-asset-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+/* Downloads list (inside a card) --------------------------------------- */
+
+.li-asset-downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 6px;
+}
+
+.li-asset-download-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--muted);
+}
+
+.li-asset-download-row__info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.li-asset-download-row__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+
+  color: var(--muted-foreground);
+  background: var(--card);
+}
+
+.li-asset-download-row__text {
+  min-width: 0;
+}
+
+.li-asset-download-row__name {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.li-asset-download-row__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+
+.li-asset-download-row__button {
+  flex-shrink: 0;
+  text-decoration: none;
+}

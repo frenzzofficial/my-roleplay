@@ -11,11 +11,17 @@ import gta6ExtendedLook04 from "@/assets/images/gta6/gta6-extened-look-04.jpg";
 
 // LifeInvader images
 import lifeinvaderAdsPolicy from "@/assets/images/lifeinvader/lifeinvader-ads-policy.jpg";
+
+// Download images
+import reshadePluginsImage from "@/assets/images/reshade/reshade-plugins-image.jpg";
+
 // family images
 import family7RankSystem from "@/assets/images/roleplay/family-7-ranking-system.jpg";
 import family10RankSystem from "@/assets/images/roleplay/family-10-ranking-system.jpg";
 import familyBonusSystem from "@/assets/images/roleplay/family-bonus-system.jpg";
 import familyEventsSystem from "@/assets/images/roleplay/family-events-system.jpg";
+import roleplayBasicGuide from "@/assets/images/roleplay/roleplay-basic-guide.jpg";
+
 // Roleplay images
 import roleplayBasicTerms from "@/assets/images/roleplay/roleplay-basic-terms.jpg";
 import roleplayFairplayRules from "@/assets/images/roleplay/roleplay-fairplay-rules.jpg";
@@ -49,6 +55,7 @@ export const imageRegistry = {
 
   // Roleplay images
   "roleplay-basic-terms.jpg": roleplayBasicTerms,
+  "roleplay-basic-guide.jpg": roleplayBasicGuide,
   "roleplay-fairplay-rules.jpg": roleplayFairplayRules,
   "roleplay-general-rules.jpg": roleplayGeneralRules,
   "roleplay-how-to-make-money.jpg": roleplayHowToMakeMoney,
@@ -58,6 +65,9 @@ export const imageRegistry = {
   "family-7-ranking-system.jpg": family7RankSystem,
   "family-events-system.jpg": familyEventsSystem,
   "family-bonus-system.jpg": familyBonusSystem,
+
+  // Downloads index masthead
+  "reshade-plugins-image.jpg": reshadePluginsImage,
 } satisfies Record<string, StaticImageData>;
 
 /** Autocomplete-friendly union of every registered local image key. */
